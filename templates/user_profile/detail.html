@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="profile-container">
+    <div class="profile-picture-img">
+      {% if profile.profile_picture %}
+        <img src="{{ profile.profile_picture.url }}" alt="Profile Picture">
+      {% else %}
+        {% if user.profile.gender == 'F' %}
+          <img src="{% static 'images/avatar-female.png' %}" alt="Default Profile Picture">
+        {% else %}
+          <img src="{% static 'images/avatar-male.png' %}" alt="Default Profile Picture">
+        {% endif %}
+      {% endif %}
+    </div>
+    <div class="profile-details">
+      <h1>{{ profile.user.username }}'s Profile</h1>
+      <p>First Name: {% if profile.first_name %}{{ profile.first_name }}{% else %}&nbsp;{% endif %}</p>
+      <p>Last Name: {% if profile.last_name %}{{ profile.last_name }}{% else %}&nbsp;{% endif %}</p>
+      <p>Gender: {{ profile.get_gender_display }}</p>
+      <p>Bio Info: {% if profile.bio_info %}{{ profile.bio_info }}{% else %}&nbsp;{% endif %}</p>
+      {% if own_profile %}
+        <a href="{% url 'profile:update' slug=profile.user.username %}" class="btn btn-edit">Edit Profile</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="user-posts">
+    <h2>{{ profile.user.username }}'s Posts</h2>
+
+    {% for post in posts %}
+    <div class="post" href="{% url 'feed:post_detail' post.id %}">
+      <div class="post-header">
+        <div class="post-author">
+          <a href="{% url 'profile:detail' slug=post.user.username %}">
+              {% if post.user.profile.profile_picture %}
+                  <img src="{{ post.user.profile.profile_picture.url }}" alt="Profile Picture">
+              {% else %}
+                  {% if post.user.profile.gender == 'F' %}
+                      <img src="{% static 'images/avatar-female.png' %}" alt="Default Profile Picture">
+                  {% else %}
+                      <img src="{% static 'images/avatar-male.png' %}" alt="Default Profile Picture">
+                  {% endif %}
+              {% endif %}
+          <p>{{ post.user.username }}</p>
+          </a>
+        </div>
+        <div class="post-actions">
+          <a href="#" class="action-icon"><i class="far fa-heart"></i></a>
+          <a href="#" class="action-icon"><i class="far fa-comment"></i></a>
+        </div> 
+        <a href="{% url 'feed:post_detail' post.id %}" class="btn-more">More</a>
+      </div>
+      <div class="post-body">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.content }}</p>
+        {% if post.image %}
+          <div class="post-image">
+            <img src="{{ post.image.url }}" alt="Post Image">
+          </div>
+        {% endif %}
+      </div>
+      <div class="post-footer">
+        <div class="post-info">
+          <p class="likes"><i class="far fa-heart"></i> {{ post.likers.count }} likes</p>
+          <p class="comments"><i class="far fa-comment"></i> {{ post.comments.count }} comments</p>
+        </div>
+      </div>
+      <div class="comment-list">
+        {% for comment in post.comments.all %}
+          <div class="comment">
+            <div class="comment-author">
+              <a href="{% url 'profile:detail' slug=comment.user.username %}">
+                {% if comment.user.profile.profile_picture %}
+                  <img src="{{ comment.user.profile.profile_picture.url }}" alt="Profile Picture">
+                {% else %}
+                  {% if comment.user.profile.gender == 'F' %}
+                    <img src="{% static 'images/avatar-female.png' %}" alt="Default Profile Picture">
+                  {% else %}
+                    <img src="{% static 'images/avatar-male.png' %}" alt="Default Profile Picture">
+                  {% endif %}
+                {% endif %}
+                <p>{{ comment.user.username }}</p>
+              </a>
+            </div>
+            <div class="comment-content">
+              <p>{{ comment.content }}</p>
+            </div>
+          </div>
+        {% empty %}
+          <p>No comments yet.</p>
+        {% endfor %}
+      </div>
+    </div>
+    {% empty %}
+      <p>No posts yet.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

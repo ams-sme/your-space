@@ -1,0 +1,442 @@
+/* Body and Typography */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3 {
+    color: #333333;
+  }
+  
+  a {
+    color: #333333;
+    text-decoration: none;
+  }
+  
+  /* Header */
+  header {
+    background-color: #333333;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo img {
+    width: 80px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-picture img {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .sign-out a {
+    color: #ffffff;
+    background-color: #428bca;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+  }
+  
+  .sign-out a:hover {
+    background-color: #3071a9;
+  }
+  
+  /* Main Content */
+  main {
+    padding: 20px;
+  }
+  
+  /* Example Post Styling */
+  .post {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .post h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .post p {
+    margin-top: 10px;
+  }
+  
+  .post img {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+  
+  .post .comments {
+    margin-top: 10px;
+  }
+  
+  .post .comments ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .post .comments li {
+    margin-bottom: 10px;
+  }
+  
+  /* Header */
+header {
+    background-color: #333333;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+  }
+  
+  .user-actions a {
+    margin-left: 10px;
+    padding: 8px 15px;
+    background-color: #428bca;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 3px;
+  }
+  
+  .user-actions a:hover {
+    background-color: #3071a9;
+  }
+  
+  .post-image {
+    max-width: 500px;
+    max-height: 300px;
+    overflow: hidden;
+  }
+  
+  .post-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Add this style to override the background and font color */
+.user-info {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Add this style to set a fixed width and height for the profile picture */
+.profile-picture img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .profile-picture-img img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .btn-edit {
+    background-color: #337ab7;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
+  .btn-edit:hover {
+    background-color: #23527c;
+  }
+  
+  .btn-edit:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(51, 122, 183, 0.4);
+  }
+  
+  .feed {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .post {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .post-author {
+    display: flex;
+    align-items: center;
+  }
+  
+  .post-author a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+  }
+  
+  .post-author img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .post-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .action-icon {
+    text-decoration: none;
+    color: #333333;
+  }
+  
+  .post-body h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .post-body p {
+    margin-bottom: 10px;
+  }
+  
+  .post-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .post-footer {
+    border-top: 1px solid #eeeeee;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  
+  .post-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  
+  .likes,
+  .comments {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .likes i,
+  .comments i {
+    margin-right: 3px;
+  }
+  
+  .likes i.fa-heart {
+    color: #e74c3c;
+  }
+  
+  .comments {
+    margin-top: 10px;
+  }
+  
+  .comment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .comment-author img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .comment-author a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+  }
+  
+  .comment-content p {
+    margin: 0;
+  }
+
+  .post-upload {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .post-upload-content {
+    width: 100%;
+    height: 100px;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: vertical;
+  }
+  
+  .post-upload-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .post-upload-image {
+    display: none;
+  }
+  
+  .btn-submit,
+  .btn-upload {
+    background-color: #337ab7;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
+  .btn-submit:hover {
+    background-color: #23527c;
+  }
+  
+  .btn-submit:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(51, 122, 183, 0.4);
+  }
+
+  .btn-more {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #337ab7;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .btn-more:hover {
+    background-color: #23527c;
+  }
+  
+  .btn-more:active {
+    background-color: #1c4567;
+  }
+  
+  .btn-more:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(51, 122, 183, 0.4);
+  }
+  
+  .post-header {
+    position: relative;
+  }
+  
+  .btn-more {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .comment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .comment-form {
+    width: 100%;
+  }
+  
+  .form-row {
+    margin-bottom: 10px;
+  }
+  
+  .comment-form textarea {
+    width: 100%;
+    height: 120px; /* Adjust the height as per your preference */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn-comment {
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .btn-comment:hover {
+    background-color: #23527c;
+  }
+  
+  .btn-comment:active {
+    background-color: #1c4567;
+  }
+  
+  .btn-comment:focus {
+    outline: none;
+  }
+  
+  .comment-list {
+    margin-top: 20px;
+  }
+  
+.site-title {
+  font-size: 24px;
+  margin-left: 10px;
+  color: #e1e1e1;
+  font-weight: bold;
+}
